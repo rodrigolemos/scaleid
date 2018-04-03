@@ -1,0 +1,80 @@
+   
+   body {
+    background-color: #87CDC3;
+   }
+
+   .divs {
+      margin-top: 10px;
+      margin-bottom: 10px;
+   }
+
+   .navbar .navbar-nav {
+      display: inline-block;
+      float: none;
+      vertical-align: top;
+    }
+
+    .navbar .navbar-collapse {
+      text-align: center;
+    }
+
+    .main {      
+      font-family: 'Comfortaa', cursive;
+    }
+
+    .gap {
+      margin-top: 35%;
+    }
+
+    .btn-scale {
+      margin: 1px;
+    }
+
+    .pri-color {
+      background-color: #EEEEEE;
+    }
+
+    .sec-color {
+      background-color: #87CDC3;
+    }
+
+    .neck {
+      display: none;
+      height: auto;
+      padding-left: 15px;
+      margin-top: 10px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    .scale {
+      display: inline-block;
+      margin: 3px;
+      padding-top: 7px;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      color: white;
+      font-size: 10px;
+      text-align: center;
+    }
+
+    .in-scale {
+      background-color: #0275D8;
+    }
+
+    .out-scale {
+      background-color: #DDDDDD;
+    }
+
+    .panel-heading {
+      cursor: pointer;
+    }
+
+    .btn-scale-hidden, .btn-scale-hidden:hover {
+       background-color: #FFF;
+      -webkit-transition: all 1s ease-in-out;
+      -moz-transition: all 1s ease-in-out;
+      -o-transition: all 1s ease-in-out;
+      transition: all 1s ease-in-out;
+    }
