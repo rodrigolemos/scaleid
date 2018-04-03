@@ -1,43 +1,49 @@
-   
-   body {
-    background-color: #87CDC3;
-   }
-
-   .divs {
+    
+    body {
+      background-color: #87CDC3;
+      padding-bottom: 50px;
+    }
+    
+    .divs {
       margin-top: 10px;
       margin-bottom: 10px;
-   }
-
-   .navbar .navbar-nav {
+    }
+    
+    .navbar .navbar-nav {
       display: inline-block;
       float: none;
       vertical-align: top;
     }
-
+    
     .navbar .navbar-collapse {
       text-align: center;
     }
-
+    
     .main {      
       font-family: 'Comfortaa', cursive;
     }
-
+    
     .gap {
       margin-top: 35%;
     }
-
+    
     .btn-scale {
+      font-size: 11px;
       margin: 1px;
     }
-
+    
     .pri-color {
       background-color: #EEEEEE;
     }
-
+    
     .sec-color {
       background-color: #87CDC3;
     }
-
+    
+    .row-string {
+      margin: auto;
+    }
+    
     .neck {
       display: none;
       height: auto;
@@ -46,35 +52,82 @@
       overflow-x: auto;
       white-space: nowrap;
     }
+    
+    .neck-filter {
+      margin-top: 10px;
+    }
 
+    .panel-guess {
+      margin-top: 15px; 
+    }
+
+    .btn-guess {
+      margin: 2px;
+    }
+    
+    .ttr-panel {
+      display: none;
+    }
+    
     .scale {
       display: inline-block;
-      margin: 3px;
-      padding-top: 7px;
-      width: 25px;
-      height: 25px;
-      border-radius: 50%;
+      margin: 1px;
+      padding-top: 2px;
+      width: 55px;
+      height: 13px;
       color: white;
-      font-size: 10px;
+      font-size: 8px;
       text-align: center;
+      cursor: default;
     }
-
+    
     .in-scale {
-      background-color: #0275D8;
+      background-color: #5BC0DE;
     }
-
+    
+    .in-scale-root {
+      background-color: rgb(236, 169, 22);
+    }
+    
     .out-scale {
       background-color: #DDDDDD;
     }
-
+    
+    .num-scale {
+      color: black;
+      font-weight: bold;
+      display: inline-block;
+    }
+    
     .panel-heading {
       cursor: pointer;
     }
-
-    .btn-scale-hidden, .btn-scale-hidden:hover {
-       background-color: #FFF;
-      -webkit-transition: all 1s ease-in-out;
-      -moz-transition: all 1s ease-in-out;
-      -o-transition: all 1s ease-in-out;
-      transition: all 1s ease-in-out;
+    
+    .btn-scale-hidden, .btn-scale-hidden:target, .btn-scale-hidden:hover {
+      content: "X";
+      background-color: #FFF;
+      -webkit-transition: all 0.5s ease-in-out;
+      -moz-transition: all 0.5s ease-in-out;
+      -o-transition: all 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out;
     }
+    
+    .glyphicon-search {
+      color: #BBB;
+      top: 30%;
+      left: 93%;
+      position: absolute;
+    }
+
+    .panel-heading {
+      position: relative;
+    }
+
+    .main > .pattern-title, .main > .pattern-body {
+      display: none;
+    }
+
+    img {
+      display: none;
+    }
+
