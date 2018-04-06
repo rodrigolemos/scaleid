@@ -54,8 +54,8 @@
 
         $(".pattern-body:first").clone().appendTo("#result");
     
-        var pscale   = obj[scale];
-        var btnscale = "";
+        var pscale = obj[scale];
+        var btnscale;
         var btnclass;
     
         $(".pattern-body:last .panel .panel-title").html( descScale(scale) );
@@ -68,13 +68,13 @@
             btnclass = "btn-info";
           }
 
-          btnscale += "<button class='btn " + btnclass + " btn-scale'> " + pscale[i] + " </button>";
+          btnscale = $("<button/>", { text: pscale[i], class: "btn " + btnclass + " btn-scale" });
+          
+          $(".pattern-body:last .panel .panel-scale .panel-btn-scale").append( btnscale ).end();
 
-        }
-        
-        $(".pattern-body:last .panel .panel-scale .panel-btn-scale").html(btnscale);
+        }        
 
-        $(".pattern-body:last .panel .panel-scale .neck-guitar").html( createGuitarNeck(pscale) );
+        $(".pattern-body:last .panel .panel-scale .neck-guitar").append( createGuitarNeck( pscale ) );
 
         $(".pattern-body:last").css("display", "block");
 
@@ -121,37 +121,46 @@
         6: getScale("E", intnat)
       }
     
-      var neck = "";
+      var neck;
       var fret;  
     
+      neck = $("<div/>", { class: "row row-string" });
+
       for (var nstring in strings) {    
     
         var string = strings[nstring];
-    
-        neck += "<div class='row row-string'>";
+        
         for (var i = 1; i < string.length; i++) {
     
           if (nstring == 1) {
-            neck += "<div class='scale num-scale fret fret-" + i + "'> " + i + " </div>";
+
+            $(neck).append( $("<div/>", { text: i, class: "scale num-scale fret fret-" + i }) );
+
           }
           
         }
-        neck += "</div>";
         
-        neck += "<div class='row row-string'>";
+
+        $(neck).append( $("<div/>", { class: "row row-string" }) );
     
         for (var i = 0; i < string.length; i++) {
     
           if (i > 0) {        
     
             if (string[i] == scale[0]) {
-              neck += "<div class='scale in-scale-root fret fret-" + i + "'> " + string[i] + " </div>";
+
+              $(neck).append( $("<div/>", { text: string[i], class: "scale in-scale-root fret fret-" + i }) );
+
             } else {
               
               if (scale.indexOf(string[i]) >= 0) {
-                neck += "<div class='scale in-scale fret fret-" + i + "'> " + string[i] + " </div>";
+
+                $(neck).append( $("<div/>", { text: string[i], class: "scale in-scale fret fret-" + i }) );
+
               } else {
-                neck += "<div class='scale out-scale fret fret-" + i + "'> " + string[i] + " </div>";
+
+                $(neck).append( $("<div/>", { text: string[i], class: "scale out-scale fret fret-" + i }) );
+
               }
     
             }
@@ -160,9 +169,10 @@
     
         }
     
-        neck += "</div>";
+        $(neck).append( $("<br/>") );
+        
       }
-    
+
       return neck;
     
     }
@@ -196,6 +206,8 @@
     
     }
     
+    var synth = new Tone.Synth().toMaster();
+
     var createView = function (root) {
     
       $("#result").slideUp("fast", function () {
@@ -207,6 +219,10 @@
     
         $(".click-neck").on("click", function () {
           $(this).parent().parent().find(".neck").slideToggle();
+        });
+        
+        $(".btn-scale").on("click", function() {
+          synth.triggerAttackRelease( $(this).html().trim() + "4", "8n");
         });
     
       });
