@@ -227,6 +227,6 @@
     
       });
     
-      $("#result").slideDown("fast");
+      $("#result").slideDown('fast');
     
     }
