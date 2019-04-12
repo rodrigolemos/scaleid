@@ -1,7 +1,7 @@
 # Scale ID
 
 This simply app identifies the triads of a tone, its four most important scales and shows the notes in the guitar neck.
-It was made with Javascript, HTML, CSS and a bit of Jquery. The proposal is to study git workflow in a practical way using as
+It was made with Javascript, HTML, CSS and Jquery. The proposal is to study git workflow in a practical way using as
 few frameworks as possible and share some musical knowledge.
 
 ## How to run
